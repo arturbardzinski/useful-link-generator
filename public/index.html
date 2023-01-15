@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link generator</title>   
+    <link rel="stylesheet" href="./style.css" type="text/css"> 
+</head>
+
+<body>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-analytics.js";
+
+        const firebaseConfig = {
+          apiKey: "AIzaSyAgp7R9kvXmY90exOYb_VTq9K8YQDRIQSw",
+          authDomain: "useful-link-generator.firebaseapp.com",
+          projectId: "useful-link-generator",
+          storageBucket: "useful-link-generator.appspot.com",
+          messagingSenderId: "653241864037",
+          appId: "1:653241864037:web:e701361efb2c0255f51b8c",
+          measurementId: "G-7W51J9NDW6"
+        };
+      
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+    <img src="./logo.jpg" alt="logo mBank">
+    <header class="title">
+
+    <div class="popup" onclick="myFunction()">LINK GENERATOR<span class="popuptext" id="myPopup">autor: artur.bardzinski@icloud.com</span>
+    </div>
+    </header>
+    <div class="info">From the drop-down menu, select a sales channel and permission level</div>
+
+    <div class="dropdown" id="canal">
+        <div class="select">
+            <span class="selected">Sales channel</span>
+            <div class="caret"></div>
+        </div>
+        <ul class="menu">
+            <li class="active">channel-customer</li>
+            <li>channel-deliverer</li>
+            <li>channel-accounting</li>
+            <li>channel-management</li>           
+        </ul>
+    </div>
+
+    <div class="dropdown" id="source">
+        <div class="select">
+            <span class="selected">Permission level</span>
+            <div class="caret"></div>
+        </div>
+        <ul class="menu" >
+            <li class="active">-2</li>
+            <li>0</li>
+            <li>-1</li>
+            <li>-2</li>           
+        </ul>
+    </div>
+    <div class="info">Enter the product number or name:</div>
+    <form class="entered">
+            <input type="text" id="prefix", minlength="3", maxlength="12", size="10">       
+    </form>   
+    <button class="btn" type="button" onclick="showLink()">GENERATE LINK</button>   
+    <a id="newLink">
+</body>
+<script src="script.js"></script>
+</html>
